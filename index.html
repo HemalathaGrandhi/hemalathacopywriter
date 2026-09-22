@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hemalatha Grandhi — Copywriter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --paper: #F2EEE3;
+    --paper-raised: #EAE4D4;
+    --ink: #1C1B17;
+    --ink-soft: #55503F;
+    --ink-faint: #8B8570;
+    --red: #B23A22;
+    --red-soft: #C7502F;
+    --rule: #D6CFB9;
+    --highlight: #E4C86A;
+    --card: #FBF9F2;
+    --shadow: rgba(28,27,23,0.08);
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #191712;
+      --paper-raised: #201D17;
+      --ink: #EFE9DA;
+      --ink-soft: #C2BAA4;
+      --ink-faint: #837C68;
+      --red: #E06B4C;
+      --red-soft: #E88566;
+      --rule: #38342A;
+      --highlight: #4A3F22;
+      --card: #211E17;
+      --shadow: rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #191712;
+    --paper-raised: #201D17;
+    --ink: #EFE9DA;
+    --ink-soft: #C2BAA4;
+    --ink-faint: #837C68;
+    --red: #E06B4C;
+    --red-soft: #E88566;
+    --rule: #38342A;
+    --highlight: #4A3F22;
+    --card: #211E17;
+    --shadow: rgba(0,0,0,0.35);
+  }
+
+  html{ scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  html, body{ height: 100%; }
+  *{ box-sizing: border-box; }
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .wrap{
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a{ color: inherit; }
+
+  h1, h2, h3, .display{
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  /* ---------- topbar ---------- */
+  header.topbar{
+    position: sticky;
+    top: 0;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 40;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner{
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mark{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+  }
+  .mark .dot{ color: var(--red); }
+  nav.links{
+    display: flex;
+    gap: 28px;
+    font-size: 0.92rem;
+  }
+  nav.links a{
+    text-decoration: none;
+    color: var(--ink-soft);
+    position: relative;
+    padding-bottom: 3px;
+  }
+  nav.links a:hover{ color: var(--ink); }
+  nav.links a::after{
+    content: '';
+    position: absolute;
+    left: 0; right: 100%;
+    bottom: -1px;
+    height: 2px;
+    background: var(--red);
+    transition: right 0.25s ease;
+  }
+  nav.links a:hover::after{ right: 0; }
+  .nav-toggle{ display: none; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding: 92px 0 76px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow-row{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+  }
+  .eyebrow-row .stamp{
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 2px 9px;
+    border-radius: 2px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    transform: rotate(-2deg);
+  }
+
+  .hero h1{
+    font-size: clamp(2.3rem, 5.4vw, 4.1rem);
+    max-width: 15ch;
+  }
+  .hero h1 .edit{
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink-soft);
+    position: relative;
+    white-space: nowrap;
+  }
+  .hero h1 .edit svg{
+    position: absolute;
+    left: -2%;
+    top: 46%;
+    width: 104%;
+    height: 24px;
+    overflow: visible;
+  }
+  .hero h1 .edit svg path{
+    fill: none;
+    stroke: var(--red);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+    animation: strike 0.7s 0.5s ease-out forwards;
+  }
+  .hero h1 .insert{
+    display: inline-block;
+    color: var(--red-soft);
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(6px);
+    animation: rise 0.5s 1.05s ease-out forwards;
+  }
+  @keyframes strike{ to{ stroke-dashoffset: 0; } }
+  @keyframes rise{ to{ opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce){
+    .hero h1 .edit svg path{ animation: none; stroke-dashoffset: 0; }
+    .hero h1 .insert{ animation: none; opacity: 1; transform: none; }
+  }
+
+  .hero .sub{
+    margin-top: 26px;
+    max-width: 46ch;
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .hero-actions{
+    margin-top: 36px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 3px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, border-color .15s ease;
+  }
+  .btn:active{ transform: translateY(1px); }
+  .btn-primary{
+    background: var(--red);
+    color: #FBF6EC;
+  }
+  .btn-primary:hover{ background: var(--red-soft); }
+  .btn-ghost{
+    border-color: var(--rule);
+    color: var(--ink);
+  }
+  .btn-ghost:hover{ border-color: var(--ink-faint); }
+
+  .hero-meta{
+    margin-top: 52px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+  }
+  .hero-meta div span.num{
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    display: block;
+    color: var(--ink);
+  }
+  .hero-meta div span.label{
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- section shell ---------- */
+  section{ padding: 84px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type{ border-bottom: none; }
+  .section-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+  }
+  .section-head .index{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--red);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .section-head h2{
+    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+  }
+  .section-head p{
+    max-width: 38ch;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- about ---------- */
+  .about-grid{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .about-grid p{
+    font-size: 1.06rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+  }
+  .about-grid p:first-child{ color: var(--ink); }
+  .pull{
+    background: var(--paper-raised);
+    border-left: 3px solid var(--red);
+    padding: 22px 24px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .credentials{
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .credentials .row{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 0.92rem;
+  }
+  .credentials .row span:first-child{ color: var(--ink-faint); }
+
+  /* ---------- services ---------- */
+  .service-list{
+    border-top: 1px solid var(--rule);
+  }
+  .service{
+    display: grid;
+    grid-template-columns: 90px 1fr 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .service .no{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-faint);
+    font-size: 0.95rem;
+  }
+  .service h3{
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  .service p{
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- work ---------- */
+  .work-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .work-card{
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px;
+    box-shadow: 0 1px 2px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .work-tag{
+    display: inline-flex;
+    align-self: flex-start;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    border: 1px solid var(--rule);
+    padding: 3px 9px;
+    border-radius: 2px;
+  }
+  .work-card h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .before-after{
+    background: var(--paper-raised);
+    border-radius: 3px;
+    padding: 16px 18px;
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+  .before-after .b{
+    color: var(--ink-faint);
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .before-after .a{
+    color: var(--ink);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    display: block;
+  }
+  .work-result{
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .work-result strong{
+    font-family: 'Fraunces', serif;
+    color: var(--red);
+    font-size: 1.2rem;
+  }
+
+  /* ---------- spec list (matiks work card) ---------- */
+  .spec-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--paper-raised);
+    border-radius: 3px;
+    padding: 16px 18px;
+  }
+  .spec-row{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .spec-label{
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    text-transform: none;
+  }
+  .spec-line{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.98rem;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  /* ---------- blog ---------- */
+  .blog-list{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--rule);
+  }
+  .blog-post{
+    border-bottom: 1px solid var(--rule);
+  }
+  .blog-post summary{
+    list-style: none;
+    cursor: pointer;
+    padding: 28px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .blog-post summary::-webkit-details-marker{ display: none; }
+  .blog-summary-text h3{
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin: 6px 0 10px;
+  }
+  .blog-meta{
+    font-size: 0.78rem;
+    color: var(--red);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+  }
+  .blog-excerpt{
+    margin: 0;
+    max-width: 58ch;
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+  .blog-toggle{
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    position: relative;
+    margin-top: 6px;
+  }
+  .blog-toggle::before, .blog-toggle::after{
+    content: '';
+    position: absolute;
+    background: var(--ink-soft);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .blog-toggle::before{ width: 12px; height: 1.5px; }
+  .blog-toggle::after{ width: 1.5px; height: 12px; transition: transform 0.2s ease; }
+  .blog-post[open] .blog-toggle::after{ transform: translate(-50%, -50%) rotate(90deg) scaleY(0); }
+  .blog-body{
+    max-width: 66ch;
+    padding: 0 0 32px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+  .blog-body p{ margin: 0 0 16px; }
+  .blog-body p:last-child{ margin-bottom: 0; }
+
+  /* ---------- process ---------- */
+  .process-list{
+    counter-reset: step;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .step{
+    position: relative;
+    padding-top: 14px;
+  }
+  .step::before{
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--red);
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .step h3{
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .step p{
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ---------- contact ---------- */
+  .contact{
+    text-align: left;
+  }
+  .contact h2{
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    max-width: 16ch;
+  }
+  .contact .sub{
+    margin-top: 18px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .contact-links{
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact-row{
+    margin-top: 46px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.9rem;
+    color: var(--ink-faint);
+  }
+  .contact-row a{ color: var(--ink-soft); text-decoration: none; }
+  .contact-row a:hover{ color: var(--red); }
+
+  footer{
+    padding: 28px 0 calc(28px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .theme-toggle{
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--ink-soft);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover{ border-color: var(--ink-faint); }
+
+  :focus-visible{
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px){
+    .about-grid{ grid-template-columns: 1fr; gap: 34px; }
+    .work-grid{ grid-template-columns: 1fr; }
+    .blog-post summary{ gap: 14px; }
+    .process-list{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px){
+    nav.links{ display: none; }
+    .service{ grid-template-columns: 1fr; gap: 6px; }
+    .service .no{ order: -1; }
+    .process-list{ grid-template-columns: 1fr; }
+    .hero{ padding: 64px 0 52px; }
+    section{ padding: 58px 0; }
+    .hero-meta{ gap: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="mark">Hemalatha Grandhi<span class="dot">.</span></a>
+    <nav class="links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap" style="border-top:none;">
+    <div class="eyebrow-row">
+      <span class="stamp">Copywriter</span>
+      <span>Writing sentences worth reading twice</span>
+    </div>
+    <h1>
+      Hi, I'm Hemalatha — the person who turns
+      <span class="edit">
+        blank pages
+        <svg viewBox="0 0 220 24" preserveAspectRatio="none"><path d="M2,12 C60,4 160,20 218,10"/></svg>
+      </span>
+      <span class="insert">a well-placed sentence</span>
+      into decisions.
+    </h1>
+    <p class="sub">I write websites, emails, and ads that sound like a person talking — because the goal was never "content." It was always someone reading a line and thinking, <em>okay, tell me more.</em></p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">See the work</a>
+      <a href="#contact" class="btn btn-ghost">Contact me</a>
+    </div>
+    <div class="hero-meta">
+      <div><span class="num">40+</span><span class="label">projects shipped</span></div>
+      <div><span class="num">6</span><span class="label">industries written for</span></div>
+      <div><span class="num">3.2x</span><span class="label">avg. lift in click-through*</span></div>
+      <div><span class="num">100%</span><span class="label">first drafts I'd still sign</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="wrap" id="about">
+    <div class="section-head">
+      <div>
+        <span class="index">01 — About</span>
+        <h2>Copy is a decision-making tool, not decoration.</h2>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I'm Hemalatha Grandhi, a copywriter who spends most days rewriting sentences until they stop sounding written. Before the polish, before the punchline, I ask one question: what does this reader need to believe in the next ten seconds to keep going?</p>
+        <p>That question is the same whether I'm writing a homepage hero, a fourteen-email onboarding sequence, or a single line on a product packaging box. The format changes. The job — make the next sentence worth reading — never does.</p>
+        <p>I work closely with founders, marketing teams, and design partners, usually starting from a messy brief and a half-finished brand voice doc, and end with copy that a whole team is willing to defend in a client call.</p>
+        <div class="credentials">
+          <div class="row"><span>Currently</span><span>Freelance / open to new projects</span></div>
+          <div class="row"><span>Focus</span><span>Web, brand voice, lifecycle email, launch copy</span></div>
+          <div class="row"><span>Worked with</span><span>D2C, fintech, SaaS, hospitality</span></div>
+        </div>
+      </div>
+      <div class="pull">
+        "Good copy doesn't announce itself. You just notice, three lines in, that you haven't stopped reading."
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="wrap" id="services">
+    <div class="section-head">
+      <div>
+        <span class="index">02 — Services</span>
+        <h2>What I write</h2>
+      </div>
+      <p>Every project starts as a conversation about the reader, not a content calendar.</p>
+    </div>
+    <div class="service-list">
+      <div class="service">
+        <span class="no">01</span>
+        <h3>Website copy</h3>
+        <p>Homepages, landing pages, and product pages that explain what you do without sounding like everyone else who does it too.</p>
+      </div>
+      <div class="service">
+        <span class="no">02</span>
+        <h3>Brand voice</h3>
+        <p>A documented voice — words to use, words to lose, and real examples — so anyone on your team can write like you on a good day.</p>
+      </div>
+      <div class="service">
+        <span class="no">03</span>
+        <h3>Email &amp; lifecycle</h3>
+        <p>Welcome flows, launches, and the ordinary weekly send, written to be opened twice: once for the subject line, once for the reply.</p>
+      </div>
+      <div class="service">
+        <span class="no">04</span>
+        <h3>Ads &amp; campaigns</h3>
+        <p>Short-form lines built to survive being read in half a second on a moving thumb.</p>
+      </div>
+      <div class="service">
+        <span class="no">05</span>
+        <h3>Product &amp; UX copy</h3>
+        <p>Microcopy, empty states, and error messages — the small sentences that quietly decide whether someone trusts your product.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="wrap" id="work">
+    <div class="section-head">
+      <div>
+        <span class="index">03 — Selected work</span>
+        <h2>A few lines I'd stand behind</h2>
+      </div>
+      <p>Client names are placeholders — swap in your real case studies here.</p>
+    </div>
+    <div class="work-grid">
+
+      <div class="work-card">
+        <span class="work-tag">Spec work · Brand voice</span>
+        <h3>Matiks</h3>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-label">Push notification</span><span class="spec-line">Someone thinks they can beat you. You have 60 seconds to disagree.</span></div>
+          <div class="spec-row"><span class="spec-label">Instagram caption</span><span class="spec-line">Not flexing. Just consistently correct.</span></div>
+          <div class="spec-row"><span class="spec-label">App Store line</span><span class="spec-line">Math, but it talks back and keeps score.</span></div>
+          <div class="spec-row"><span class="spec-label">Streak reminder</span><span class="spec-line">Your streak is standing outside. It's cold. Let it in.</span></div>
+        </div>
+        <p style="color:var(--ink-soft); font-size:0.94rem; line-height:1.55; margin:0;">Unsolicited brand-voice samples written after actually playing the app — because the brief said to, and because the duels were genuinely fun.</p>
+        <div class="work-result">Tested in real time against <strong>real players</strong></div>
+      </div>
+
+      <div class="work-card">
+        <span class="work-tag">D2C · Homepage</span>
+        <h3>Nettle &amp; Bloom</h3>
+        <div class="before-after">
+          <span class="b">Premium skincare made with natural ingredients.</span>
+          <span class="a">Skincare your face will actually thank you for.</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:0.94rem; line-height:1.55; margin:0;">Rewrote the entire homepage and product line to sound like a friend who happens to know skincare, not a lab report.</p>
+        <div class="work-result"><strong>+38%</strong> add-to-cart rate after launch</div>
+      </div>
+
+      <div class="work-card">
+        <span class="work-tag">Fintech · App</span>
+        <h3>Faro Financial</h3>
+        <div class="before-after">
+          <span class="b">Manage your finances with our intuitive platform.</span>
+          <span class="a">See where your money actually went. Every time.</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:0.94rem; line-height:1.55; margin:0;">Simplified onboarding copy and 40+ microcopy strings so a five-minute setup felt like five minutes, not fifteen.</p>
+        <div class="work-result"><strong>−21%</strong> drop-off during onboarding</div>
+      </div>
+
+      <div class="work-card">
+        <span class="work-tag">SaaS · Email</span>
+        <h3>Loop Fitness</h3>
+        <div class="before-after">
+          <span class="b">Check out our new features today!</span>
+          <span class="a">You asked for this. So we built it.</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:0.94rem; line-height:1.55; margin:0;">A 12-email lifecycle series that replaced generic feature announcements with actual reader stories.</p>
+        <div class="work-result"><strong>2.4x</strong> open rate vs. previous sends</div>
+      </div>
+
+      <div class="work-card">
+        <span class="work-tag">Hospitality · Launch</span>
+        <h3>Hearth &amp; Row</h3>
+        <div class="before-after">
+          <span class="b">A cozy dining experience in the heart of the city.</span>
+          <span class="a">Come in loud. Leave slow.</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:0.94rem; line-height:1.55; margin:0;">Full brand voice and opening-week campaign copy, from the menu descriptions to the reservation confirmation email.</p>
+        <div class="work-result">Sold out <strong>3 weeks</strong> straight from launch</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="wrap" id="blog">
+    <div class="section-head">
+      <div>
+        <span class="index">04 — Blog</span>
+        <h2>Things I think about while writing</h2>
+      </div>
+      <p>Short essays, mostly about how people think — written in between projects.</p>
+    </div>
+    <div class="blog-list">
+
+      <details class="blog-post">
+        <summary>
+          <div class="blog-summary-text">
+            <span class="blog-meta">Essay · 5 min read</span>
+            <h3>The Problem With Being &ldquo;Good at Math&rdquo;</h3>
+            <p class="blog-excerpt">Somewhere along the way, math became a personality trait. You're either good at it, or you're the person who reaches for a calculator.</p>
+          </div>
+          <span class="blog-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="blog-body">
+          <p>Somewhere along the way, math became a personality trait.</p>
+          <p>You're either <em>good at math</em> or you're the person who starts sweating when someone asks, "What's 17% of 200?"</p>
+          <p>And once you decide which one you are, you tend to stick with it.</p>
+          <p>The "math person" gets asked to split the bill. The rest of us reach for a calculator. Nobody really questions it.</p>
+          <p>But here's the strange part: most of us use math all day.</p>
+          <p>We compare prices. We calculate discounts. We split rent. We figure out whether that "buy 2, get 1 free" deal is actually a deal. We estimate how long it'll take to get somewhere when Google Maps says 37 minutes. We mentally calculate how much time we have left before a deadline.</p>
+          <p>We just don't call any of that math.</p>
+          <p>Because somewhere between school and adulthood, math stopped feeling like a thing you <em>do</em> and started feeling like a thing you're either <em>good at</em> or <em>not</em>.</p>
+          <p>And school didn't exactly help. There were marks. There were ranks. There was that one kid who finished the paper while you were still trying to remember whether the minus sign belonged there.</p>
+          <p>So naturally, you learned to associate math with getting the right answer.</p>
+          <p>But maybe that's not the interesting part.</p>
+          <p>The interesting part is what happens when you give yourself a few seconds to figure something out.</p>
+          <p>Can you spot the shortcut? Can you do it faster this time? Can you beat your friend? Can you get one more right than yesterday?</p>
+          <p>That feels different. It doesn't feel like homework. It feels like a game.</p>
+          <p>And that's probably where math should have been all along. Not a chapter waiting to be completed. Not a grade waiting to be assigned. Just a small challenge sitting in front of you, asking:</p>
+          <p><strong>"Can you get this one?"</strong></p>
+          <p>Matiks is built around that feeling. You can jump into a quick duel, test yourself against someone else, chase a streak, or simply see how fast your brain can move today.</p>
+          <p>There's no dramatic transformation waiting at the end. You don't need to become a "math person." You just need to be curious enough to try the next question.</p>
+          <p>And maybe, eventually, when someone asks you to split the bill — you'll put the calculator away.</p>
+          <p>Maybe.</p>
+        </div>
+      </details>
+
+      <details class="blog-post">
+        <summary>
+          <div class="blog-summary-text">
+            <span class="blog-meta">Essay · 4 min read</span>
+            <h3>The Six-Second Panic (And What It's Actually Good For)</h3>
+            <p class="blog-excerpt">A timer starts and your brain does something ridiculous before it does something useful. Turns out that's not a bug.</p>
+          </div>
+          <span class="blog-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="blog-body">
+          <p>There's a very specific kind of panic that only shows up when a timer starts.</p>
+          <p>You knew the answer four seconds ago. You could have told anyone. And then the countdown appears, and your brain does the one thing it shouldn't: it starts thinking about the timer instead of the question.</p>
+          <p>This happens to everyone. It happened to you in an exam hall. It happens in a quiz. It happens the second a duel invite gets accepted and the numbers start counting down.</p>
+          <p>Most of us treat this as a flaw. Something to get over. Proof that we "don't perform well under pressure," whatever that means.</p>
+          <p>But the panic isn't really about math. It's about being watched — even if the only one watching is a clock.</p>
+          <p>Here's the part nobody tells you: that six seconds of panic gets shorter every time you sit through it.</p>
+          <p>Not because the question gets easier. Because you get less surprised by the feeling of being timed. The panic stops being news.</p>
+          <p>This is, annoyingly, the entire reason timed practice works better than untimed practice — not because speed is the goal, but because staying calm inside a countdown is its own separate skill, and skills only get built by repetition.</p>
+          <p>You don't get faster at math by thinking about math for longer. You get faster by sitting inside that six-second panic often enough that it stops being panic and starts being Tuesday.</p>
+          <p>This is more or less what a duel on Matiks is doing to you, on purpose, in the background, while you're busy trying to beat a stranger's score.</p>
+          <p>Every round is a small, low-stakes rehearsal for staying steady while a number counts down. The math is almost secondary. The real thing being trained is your ability to think clearly while something is ticking.</p>
+          <p>Which, it turns out, is a far more useful skill than knowing your times tables.</p>
+          <p>The clock isn't the enemy. It's just reps.</p>
+        </div>
+      </details>
+
+      <details class="blog-post">
+        <summary>
+          <div class="blog-summary-text">
+            <span class="blog-meta">Essay · 4 min read</span>
+            <h3>Everyone Is Faster Than They Think They Are</h3>
+            <p class="blog-excerpt">Most people quietly assume their brain runs a little slower than everyone else's. Almost nobody is right about that.</p>
+          </div>
+          <span class="blog-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="blog-body">
+          <p>Ask a room full of people to rate their own mental speed, and something strange happens.</p>
+          <p>Almost everyone rates themselves as slightly below average. Not terrible. Not slow. Just a little behind whatever the "normal" pace is supposed to be.</p>
+          <p>Which is mathematically impossible, obviously. Everyone can't be a little below average. But everyone quietly believes it about themselves anyway.</p>
+          <p>Part of this is because speed is invisible until it's compared. You don't know your reaction time is fast or slow in a vacuum — you only find out relative to someone else, in a moment that usually also involves some pressure, some audience, some stakes.</p>
+          <p>And the first few times that comparison happens — in a classroom, in a family group calculating a restaurant bill, in a meeting where someone asks you to do quick mental math out loud — it rarely goes well. Nerves eat into the two seconds you actually needed.</p>
+          <p>So the story gets written early: I'm not fast at this. And then nobody bothers to test it again, because why would you go looking for more evidence of something you've already decided is true?</p>
+          <p>This is the part that's genuinely annoying: the belief and the ability are almost never as correlated as people assume. Most "slow" people are simply out of practice at being watched while they think.</p>
+          <p>The fix isn't a trick or a shortcut. It's just repetition without an audience that matters — playing enough quick rounds that speed stops being a performance and starts being a reflex.</p>
+          <p>That's the quiet, unglamorous thing a tool like Matiks is actually good for. Not turning anyone into a prodigy. Just giving your brain enough low-stakes reps that the next time someone asks you to do math out loud, you're not doing it for the first time in ten years.</p>
+          <p>You were probably never as slow as you decided you were. You were just untested.</p>
+          <p>Play enough rounds and you'll find out.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="index">05 — Process</span>
+        <h2>How a project usually goes</h2>
+      </div>
+    </div>
+    <div class="process-list">
+      <div class="step">
+        <h3>Brief &amp; dig in</h3>
+        <p>A call to understand the reader, the goal, and what's already been tried.</p>
+      </div>
+      <div class="step">
+        <h3>Research</h3>
+        <p>Competitor scan, customer language, and the brand's own past words.</p>
+      </div>
+      <div class="step">
+        <h3>Draft &amp; review</h3>
+        <p>A first draft built to react to, followed by one focused revision round.</p>
+      </div>
+      <div class="step">
+        <h3>Final &amp; handoff</h3>
+        <p>Polished copy delivered in a format your team can actually use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="wrap contact" id="contact">
+    <span class="index">06 — Get in touch</span>
+    <h2>Have a project that needs better words?</h2>
+    <p class="sub">Tell me what you're building and who it's for. I'll reply within a couple of days with next steps — or an honest "not a fit," if that's the case.</p>
+    <div class="contact-links">
+      <a href="mailto:hello@hemalathagrandhi.com" class="btn btn-primary">Email me</a>
+      <a href="https://www.linkedin.com/in/hemalatha-grandhi-848051271/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://drive.google.com/file/d/1R8M85ZaFLBs8fM-r_6ZZbPxmY93E7Sy2/view?usp=sharing" class="btn btn-ghost">View resume</a>
+    </div>
+    <div class="contact-row">
+      <span>Andhra Pradesh, India</span>
+      <span>Replies within 48 hours</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> Hemalatha Grandhi. All words her own.</span>
+  <span>Built with care, one sentence at a time.</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    if(current === 'dark'){
+      root.setAttribute('data-theme','light');
+    } else if(current === 'light'){
+      root.removeAttribute('data-theme');
+    } else {
+      root.setAttribute('data-theme','dark');
+    }
+  });
+</script>
+
+</body>
+</html>
